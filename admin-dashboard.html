@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | SMGR Prize Pop</title>
+    <link rel="stylesheet" href="admin-dashboard.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Header -->
+        <div class="dashboard-header">
+            <div class="header-content">
+                <div class="header-left">
+                    <h1 class="registry-title">PARTICIPANT REGISTRY</h1>
+                    <p class="registry-subtitle">DEPARTMENT OF PATHOLOGY | SMGR COLLEGE</p>
+                </div>
+                <div class="header-right">
+                    <button id="exportBtn" class="btn btn-export">
+                        <span>📊</span> EXPORT EXCEL
+                    </button>
+                    <button id="clearBtn" class="btn btn-danger">
+                        <span>🗑️</span> CLEAR ALL
+                    </button>
+                    <button id="logoutBtn" class="btn btn-secondary">
+                        <span>🔑</span> LOGOUT
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="dashboard-content">
+            <div class="table-container">
+                <!-- Loading State -->
+                <div id="loadingState" class="state-message">
+                    <p>Loading registrations...</p>
+                </div>
+
+                <!-- Empty State -->
+                <div id="emptyState" class="state-message" style="display: none;">
+                    <p>No registrations found yet.</p>
+                </div>
+
+                <!-- Data Table -->
+                <div id="tableWrapper" style="display: none;">
+                    <table class="participants-table">
+                        <thead>
+                            <tr>
+                                <th class="col-index">INDEX</th>
+                                <th class="col-name">FULL NAME</th>
+                                <th class="col-details">DETAILS</th>
+                                <th class="col-phone">PHONE</th>
+                                <th class="col-tokens">TOKENS</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <!-- Rows will be inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Error State -->
+                <div id="errorState" class="state-message error" style="display: none;">
+                    <p id="errorMessage"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="dashboard-footer">
+            <p>Total Registrations: <span id="totalCount">0</span></p>
+            <p>Last Updated: <span id="lastUpdate">-</span></p>
+        </div>
+    </div>
+
+    <script type="module" src="admin-dashboard.js"></script>
+</body>
+</html>
