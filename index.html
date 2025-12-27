@@ -376,8 +376,8 @@
             const mobile = document.getElementById('mobile').value.trim();
             const tokens = parseInt(document.getElementById('tokens').value);
     
-            if (tokens < 1 || tokens > 10) {
-                showMessage('Tokens must be between 1 and 10', 'error');
+            if (tokens < 1) {
+                showMessage('Tokens must be at least 1', 'error');
                 return;
             }
     
